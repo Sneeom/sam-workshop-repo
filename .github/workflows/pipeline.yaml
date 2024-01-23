@@ -58,7 +58,7 @@ jobs:
           role-to-assume: ${{ env.TESTING_PIPELINE_EXECUTION_ROLE }}
           role-session-name: testing-packaging
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Delete feature branch stack
         env:
@@ -91,7 +91,7 @@ jobs:
           role-to-assume: ${{ env.TESTING_PIPELINE_EXECUTION_ROLE }}
           role-session-name: feature-deployment
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Deploy to feature stack in the testing account
         shell: bash
@@ -123,7 +123,7 @@ jobs:
           role-to-assume: ${{ env.TESTING_PIPELINE_EXECUTION_ROLE }}
           role-session-name: testing-packaging
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Upload artifacts to testing artifact buckets
         run: |
@@ -144,7 +144,7 @@ jobs:
           role-to-assume: ${{ env.PROD_PIPELINE_EXECUTION_ROLE }}
           role-session-name: prod-packaging
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Upload artifacts to production artifact buckets
         run: |
@@ -178,7 +178,7 @@ jobs:
           role-to-assume: ${{ env.TESTING_PIPELINE_EXECUTION_ROLE }}
           role-session-name: testing-deployment
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Deploy to testing account
         run: |
@@ -222,7 +222,7 @@ jobs:
           role-to-assume: ${{ env.PROD_PIPELINE_EXECUTION_ROLE }}
           role-session-name: prod-deployment
           role-duration-seconds: 3600
-          role-skip-session-tagging: true
+          
 
       - name: Deploy to production account
         run: |
